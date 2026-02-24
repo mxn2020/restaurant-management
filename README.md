@@ -1,83 +1,94 @@
-# Restaurant Management System
+# Restaurant Management
 
-## Pages & Features
+Restaurant operations including reservations, orders, and menu management.
 
-### 1. Dashboard
-- Daily revenue & covers (guests served)
-- Active orders count
-- Table occupancy map
-- Top-selling dishes today
-- Reservation count
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Floor Plan & Tables
-- Visual floor plan with table layout
-- Table status (available, occupied, reserved, cleaning)
-- Assign party to table
-- Merge / split tables
-- Section management (indoor, outdoor, bar)
+## Tech Stack
 
-### 3. Menu Management
-- Menu categories (appetizers, mains, desserts, drinks)
-- Add / edit / delete menu items
-- Item detail: name, description, price, photo, allergens
-- Mark items as available / sold out
-- Daily specials & seasonal menus
-- Modifier / add-on configuration (extra cheese, no onion)
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Orders
-- Create order per table / takeaway / delivery
-- Add items with modifiers & special instructions
-- Order summary & total calculation
-- Send order to kitchen (KOT – Kitchen Order Ticket)
-- Order status tracking (preparing → ready → served)
-- Split bill & item-level splitting
+## Getting Started
 
-### 5. Kitchen Display (KDS)
-- Incoming orders queue
-- Order timer (time since placed)
-- Mark items as preparing / ready
-- Priority flagging
-- Course-wise preparation flow
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Reservations
-- Table reservation with date, time, party size
-- Reservation calendar view
-- Waitlist management
-- Automated confirmation & reminder notifications
-- Walk-in vs. reservation tracking
+## License
 
-### 7. Billing & Payments
-- Generate bill per table
-- Apply discounts, promotions, service charge
-- Tax calculation
-- Payment methods (cash, card, digital wallet)
-- Receipt printing / email
-- Tip recording
+MIT © Mehdi Nabhani
 
-### 8. Inventory & Ingredients
-- Ingredient stock tracking
-- Recipe management (ingredients per menu item)
-- Auto-deduct stock on order
-- Low-stock alerts
-- Supplier ordering
+---
 
-### 9. Staff
-- Staff profiles with roles (server, chef, manager, host)
-- Shift scheduling
-- Table assignment per server
-- Tip distribution tracking
+<details>
+<summary>📋 Original Feature Spec</summary>
 
-### 10. Reports
-- Revenue by day, week, month
-- Top-selling & low-performing items
-- Table turnover rate
-- Labor cost as % of revenue
-- Customer feedback summary
-- Export as PDF / CSV
+# {{APP_TITLE}}
 
-### 11. Settings
-- Restaurant profile & branding
-- Tax & service charge rates
-- Operating hours
-- Printer & KDS configuration
-- User roles & permissions
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
